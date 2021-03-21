@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226071473cb115c43a3c7a6c1d13fa2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonMag: {fileID: 4900000, guid: 87c601009a6c3984c9ba41a382ea3988, type: 3}
+  jsonMag: {fileID: 4900000, guid: 71be53b0eb2cc174e99d4924a4687a87, type: 3}
   debugging: 1
 --- !u!4 &1531600943
 Transform:
@@ -326,9 +326,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9853550eae258254091ec26b9096206b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mesh: {fileID: -2432090755550338912, guid: df69ea160fdc2fb42bcab657dfac98f1, type: 3}
+  mesh: {fileID: -2432090755550338912, guid: 52a61543ba1dd504a9b95989e46a5304, type: 3}
   material: {fileID: 2100000, guid: 1517e110964a2e44693ef3af595b6e5f, type: 2}
-  Scale: 100
+  Scale: 1.5
   displayMagnetisation: 0
 --- !u!1 &1687258581
 GameObject:

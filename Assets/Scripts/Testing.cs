@@ -80,7 +80,7 @@ public class Testing : MonoBehaviour
                     entityManager.SetComponentData(entity, new DataStruct { position = box.Center, direction = direction});
 
                     //entityManager.SetComponentData(entity, new Scale { Value = magnitude });
-                    float3 nonUniformScale = new float3(1, magnitude, 1);
+                    float3 nonUniformScale = new float3(1, 1, magnitude);
                     entityManager.SetComponentData(entity, new NonUniformScale { Value = nonUniformScale});
 
 
