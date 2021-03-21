@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Text.RegularExpressions;
+﻿using UnityEngine;
 
 public class JSONLoader : MonoBehaviour
 {
-    //public static JSONLoader instance;
-    //public static JSONLoader Instance { get { return _instance; } }
     public TextAsset jsonMag;
 
     public float[,,,] magnetisation;
+
+    public bool debugging = true;
 
     public float[,,,] Magnet
     {
@@ -19,27 +16,12 @@ public class JSONLoader : MonoBehaviour
     private void Awake()
     {
         magnetisation = ReadCSVMag();
-        //if (instance != null)
-        //{
-        //    instance = this;
-        //}
-        //else if (instance != this)
-        //{
-        //    Destroy(this);
-        //}
-        Debug.Log($"{Magnet.GetLength(0)} {Magnet.GetLength(1)} {Magnet.GetLength(2)} {Magnet.GetLength(3)}");
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
+
+        if (debugging) { Debug.Log($"{Magnet.GetLength(0)} {Magnet.GetLength(1)} {Magnet.GetLength(2)} {Magnet.GetLength(3)}"); }
         
     }
+    
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public float[,,,] ReadCSVMag()
     {
         string data_string = jsonMag.ToString();
@@ -51,8 +33,6 @@ public class JSONLoader : MonoBehaviour
         int Nz = first_split[0].Split(new string[] { "]],[[" }, System.StringSplitOptions.None).Length;
         int Ny = first_split[0].Split(new string[] { "]],[[" }, System.StringSplitOptions.None)[0].Split(new string[] { "],[" }, System.StringSplitOptions.None).Length;
         int Nx = first_split[0].Split(new string[] { "]],[[" }, System.StringSplitOptions.None)[0].Split(new string[] { "],[" }, System.StringSplitOptions.None)[0].Split(',').Length;
-
-        //float[,,,] Mag = new float[first_split.Length, Nz, Ny, Nx];
 
         float[,,,] Mag = new float[Nx, Ny, Nz, first_split.Length];
 
@@ -76,7 +56,9 @@ public class JSONLoader : MonoBehaviour
             }
 
         }
-        //Debug.Log(Mag[0, 0, 0, 0]);
+
+        if (debugging) { Debug.Log(Mag[0, 0, 0, 0]); }
+
         return Mag;
     }
 }
